@@ -1,0 +1,14 @@
+name: 'Terraform Lint'
+description: 'Lint for Terraform'
+inputs:
+  path:  
+    description: Path to the terraform files
+    required: true
+  rule_file:
+    description: Personal rule set file
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.path}}
+    - ${{ inputs.rule_file}}
